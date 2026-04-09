@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="View your phishing URL detection history with detailed risk assessments for each checked URL.">
+  <title>URL Check History - Phishing Detector</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header role="banner">
+      <div class="header-top">
+        <h1>URL Check History</h1>
+        <a href="index.html" class="nav-link" aria-label="Return to URL checker">Back to Checker</a>
+      </div>
+      <p>Review all URLs you have checked with their risk assessments and details.</p>
+    </header>
+
+    <main role="main">
+      <section class="card">
+        <div class="history-header">
+          <h2>Recent Checks</h2>
+          <div class="button-group">
+            <button id="history-refresh" type="button" aria-label="Reload URL check history">Refresh</button>
+            <button id="clear-all-btn" type="button" class="danger-btn hidden" aria-label="Delete all URL check history">Clear All</button>
+          </div>
+        </div>
+        <div class="history-shell">
+          <table role="table" aria-label="URL check history table">
+            <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">URL</th>
+                <th scope="col">Status</th>
+                <th scope="col">Risk Score</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody id="history-body">
+              <tr><td colspan="5" style="text-align: center; color: var(--text-secondary);">Loading history...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div id="empty-message" class="card hidden">
+        <p style="text-align: center; color: var(--text-secondary);">No URL checks recorded yet. Go back and check a URL to populate history.</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="history.js"></script>
+</body>
+</html>
